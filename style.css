@@ -95,6 +95,7 @@ h2 {
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   pointer-events: none;
+  text-align: center;
 }
 #tooltip.hidden {
   display: none;

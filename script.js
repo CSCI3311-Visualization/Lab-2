@@ -7,6 +7,7 @@ fetch('./attractions.json')
     attractions = data;
   })
   .then(() => {
+    // Initial rendering for all attractions
     filterData('all');
   });
 
@@ -26,18 +27,15 @@ function filterData(category) {
    * **************************************************/
   let filtered = attractions;
   if (category != 'all') {
-    filtered = attractions.filter(
-      (attraction) => attraction.Category == category
-    );
+    filtered = attractions.filter((attr) => attr.Category == category);
   }
   filtered.sort((a, b) => b.Visitors - a.Visitors);
-  let rendered = filtered.filter((v, i) => i < 5);
-  console.log('rendered', rendered);
+  let rendered = filtered.slice(0, 5);
+  console.log(rendered);
   renderBarChart(rendered);
 }
 
 function handler(event) {
-  console.log('event target value', event.target.value);
   filterData(event.target.value);
 }
 
