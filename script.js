@@ -31,7 +31,6 @@ function filterData(category) {
   }
   filtered.sort((a, b) => b.Visitors - a.Visitors);
   let rendered = filtered.slice(0, 5);
-  console.log(rendered);
   renderBarChart(rendered);
 }
 
